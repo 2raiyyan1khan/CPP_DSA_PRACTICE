@@ -3,6 +3,8 @@ using namespace std;
 
 void bubbleSort(int arr[], int size)
 {
+    bool sorted = false;
+
     for (int i = 1; i < size; i++)
 
     {
@@ -12,8 +14,12 @@ void bubbleSort(int arr[], int size)
             if (arr[j] > arr[j + 1])
             {
                 swap(arr[j], arr[j + 1]);
+                sorted = true;
             }
         }
+        // if no swap --> That means array is already sorted
+        if (sorted == false)
+            break;
     }
 }
 
